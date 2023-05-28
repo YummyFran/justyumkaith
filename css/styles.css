@@ -1,0 +1,193 @@
+dialog {
+    z-index: 1000;
+}
+
+.banner {
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.preloader.animate {
+    z-index: 5000; 
+    position: fixed !important;
+    background-color: black !important;
+    animation: loaded 0.5s forwards 1s;
+}
+.radial-animation.animate {
+    background-color: white;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    position: absolute;
+    mix-blend-mode: difference;
+    animation: loader 1.5s forwards;
+}
+.head {padding-top: 50vh;}
+.subhead {padding-bottom: 50vh;}
+
+.s-item {
+    height: 100vh;
+    background-color: var(--bs-gray-300);
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.s-img {
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    transition: 0.5s;
+}
+
+.justine, .kaith {
+    scale: 2;
+    top: 60%;
+}
+
+.yummy {
+    bottom: -10%;
+    filter: brightness(1.8);
+}
+
+.kaith {
+    transform-origin: 44% 50%;
+    filter: brightness(1.2);
+}
+
+.s-name {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15vw;
+    line-height: 0.75;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.s-front {
+    color: transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+.s-modal {
+    background-color: transparent;
+    opacity: 0.9;
+    border-radius: 1rem;
+    border: none;
+    height: 75vh;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+        25px 35px 20px rgba(0,0,0,0.05),
+        25px 30px 30px rgba(0,0,0,0.05),
+        inset -20px -20px 25px rgba(255,255,255,0.9);
+    transition: 1s;
+    color: #717171;
+    outline: none;
+    overflow: hidden;
+}
+
+.s-modal::backdrop {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.94;
+}
+
+.s-modal[open] {
+    animation: showModal 2s ease-in-out forwards, waterAnimation 3s ease-in-out 1s infinite alternate;
+}
+
+.s-modal[open]::backdrop {
+    animation: showModal 2s ease-in-out forwards;
+}
+
+.s-modal h3 { color: #3d3d3d}
+.s-modal p { max-width: 30rem; margin: auto; margin-block: 1rem;}
+.progress {
+    position: relative;   
+}
+.progress-bar { 
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    width: 50%;
+    aspect-ratio: 1;
+    border-radius: 50%;   
+}
+button[data-close-modal] { background-color: #a53b3d !important; color: white !important;}
+.kat { position: absolute; letter-spacing: -1rem;}
+
+.top, .bottom {
+    position: relative;
+    transition: 1s;
+    left: 0;
+    right: 0;
+}
+
+.activity h1{
+    color: transparent;
+    font-size: 10vw;
+    font-weight: 800;
+    position: sticky;
+    line-height: 1;
+    top: 50px;
+    -webkit-text-stroke: 3px #3d3d3d;
+    background-color: white;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+}
+
+.act1 .act-item {
+    background-image: url('../images/periodic.jpeg');
+    background-size: cover;
+}
+
+.progress-90 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 90%, #da4446 0);}
+.progress-85 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 85%, #da4446 0);}
+.progress-80 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 80%, #da4446 0);}
+.progress-65 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 65%, #da4446 0);}
+.progress-55 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 55%, #da4446 0);}
+
+.i-justine .top .kat {      left: 160%;     }
+.i-justine .bottom .kat {   right: 160%;    }
+.i-yummy .top .kat {        left: 180%;     }
+.i-yummy .bottom .kat {     right: 135%;    }
+.i-kaith .top .kat {        left: 180%;      }
+.i-kaith .bottom .kat {     right: 150%;     }
+
+.s-item:hover.i-justine .top {      left: -160%;    }
+.s-item:hover.i-justine .bottom {   left: 160%;     }
+.s-item:hover.i-yummy .top {        left: -128%;     }
+.s-item:hover.i-yummy .bottom {     left: 160%;      }
+.s-item:hover.i-kaith .top {        left: -123%;      }
+.s-item:hover.i-kaith .bottom {     left: 155%;      }
+.s-item:hover .s-img {  transform: scale(1.05); filter: drop-shadow(6px 6px white) drop-shadow(-6px -6px white);}
+.s-item:hover.i-yummy .s-img { filter: brightness(1.8) drop-shadow(8px 8px white) drop-shadow(-8px -8px white);}
+.s-item:hover.i-kaith .s-img { filter: brightness(1.2) drop-shadow(4px 4px white) drop-shadow(-4px -4px white);}
+.s-item:hover.i-justine { background-image: url("../images/bg11.jpg");}
+.s-item:hover.i-yummy { background-image: url("../images/bg11.jpg");}
+.s-item:hover.i-kaith { background-image: url("../images/bg11.jpg");}
+
+@keyframes loader {
+    0% {width: 0;}
+    5% {width: 0;}
+    90% {width: 150vw;}
+}
+@keyframes loaded {
+    0% { opacity: 1; top: 0;}
+    80% {opacity: 0;}
+    90% {top:0; opacity: 0;}
+    100% {top: -500vh;}
+}
+@keyframes showModal {
+    0% { opacity: 0;}
+    50% { opacity: 0;}
+    65% { opacity: 1;}
+}
+@keyframes waterAnimation {
+    0% { border-radius: 69% 31% 61% 39% / 61% 61% 39% 39% ;}
+    50% { border-radius: 47% 53% 67% 33% / 50% 56% 44% 50% ; }
+    100% { border-radius: 60% 40% 49% 51% / 50% 54% 46% 50% ;}
+}

@@ -1,3 +1,6 @@
+:root {
+    --slider-width: 40vw;
+}
 dialog {
     z-index: 1000;
 }
@@ -136,12 +139,62 @@ button[data-close-modal] { background-color: #a53b3d !important; color: white !i
     -webkit-text-stroke: 3px #3d3d3d;
     background-color: white;
     margin-bottom: 0;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.3rem;
+    padding-top: 0;
+}
+
+.act-item {
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .act1 .act-item {
     background-image: url('../images/periodic.jpeg');
-    background-size: cover;
+}
+
+.act2 .act-item {
+    background-image: url('../images/survey.png');
+}
+
+.act3 .act-item {
+    background-image: url('../images/parallax.png');
+}
+
+.gallery h1,
+.contact h1{
+    font-size: 10vw;
+    font-weight: 800;
+    -webkit-text-stroke: 3px white;
+    color: transparent;
+}
+
+.gallery {
+    position: relative !important;
+}
+
+.gallery-carousel {
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: skewY(-5deg);
+    transform-origin: left;
+    background-color: white;
+    mix-blend-mode: difference;
+    display: flex;
+    overflow: hidden;
+}
+
+.c-item {
+    border: 2px solid red;
+    margin-inline: 3px;
+    height: 100%;
+    width: 40%;
+    flex: 1 0 auto;
+    position: relative;
+    left: 0;
+    animation: glide 20s linear infinite;
 }
 
 .progress-90 { background:radial-gradient(closest-side, white 75%, transparent 76% 100%), conic-gradient(#a53b3d 90%, #da4446 0);}
@@ -190,4 +243,70 @@ button[data-close-modal] { background-color: #a53b3d !important; color: white !i
     0% { border-radius: 69% 31% 61% 39% / 61% 61% 39% 39% ;}
     50% { border-radius: 47% 53% 67% 33% / 50% 56% 44% 50% ; }
     100% { border-radius: 60% 40% 49% 51% / 50% 54% 46% 50% ;}
+}
+@keyframes glide {
+    0% {
+        left: 0;
+    }
+    50% {
+        
+    }
+    100% {
+        left: -250%;
+    }
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+   }
+	100% {
+		transform: translateX(calc(var(--slider-width) * -3));
+   }
+}
+.slider {
+	background: white;
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.slider::before, .slider::after {
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	content: "";
+	height: 100%;
+	position: absolute;
+	width: 10vw;
+	z-index: 2;
+}
+.slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+.slider::before {
+	left: 0;
+	top: 0;
+}
+.slider .slide-track {
+	animation: scroll 15s linear infinite;
+	display: flex;
+	width: calc(var(--slider-width) * 6);
+}
+.slider .slide {
+	height: 70vh;
+	width: var(--slider-width);
+    background-color: red;
+    background-position: center;
+    background-size: cover;
+}
+.just {
+    background-image: url('../images/justinegallery.jpg');
+}
+.yum {
+    background-image: url('../images/yummygallery.jpg');
+}
+.kai {
+    background-image: url('../images/kaithgallery.png');
 }

@@ -310,3 +310,9 @@ button[data-close-modal] { background-color: #a53b3d !important; color: white !i
 .kai {
     background-image: url('../images/kaithgallery.png');
 }
+
+@media (max-width: 978px) {
+    .contact-form {
+        padding: 0 !important;
+    }
+}

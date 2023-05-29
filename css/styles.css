@@ -148,15 +148,15 @@ button[data-close-modal] { background-color: #a53b3d !important; color: white !i
     background-repeat: no-repeat;
 }
 
-.act1 .act-item {
+.act1.act-item {
     background-image: url('../images/periodic.jpeg');
 }
 
-.act2 .act-item {
+.act2.act-item {
     background-image: url('../images/survey.jpeg');
 }
 
-.act3 .act-item {
+.act3.act-item {
     background-image: url('../images/parallax.png');
 }
 
